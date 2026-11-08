@@ -3,7 +3,7 @@
 
 const ENEMY_TYPES = {
   grunt:    { name: 'Grunt',    hp: 30,   speed: 90,  radius: 14, color: '#e74c3c', damage: 10, coin: 2,  unlock: 1, cost: 1, shape: 'circle' },
-  runner:   { name: 'Runner',   hp: 15,   speed: 175, radius: 10, color: '#f1c40f', damage: 6,  coin: 1,  unlock: 2, cost: 1, shape: 'triangle' },
+  runner:   { name: 'Runner',   hp: 15,   speed: 175, radius: 10, color: '#9cff2e', damage: 6,  coin: 1,  unlock: 2, cost: 1, shape: 'triangle' },
   tank:     { name: 'Tank',     hp: 160,  speed: 50,  radius: 24, color: '#2e8b57', damage: 25, coin: 8,  unlock: 4, cost: 4, shape: 'square' },
   shooter:  { name: 'Shooter',  hp: 40,   speed: 85,  radius: 14, color: '#9b59b6', damage: 9,  coin: 4,  unlock: 5, cost: 3, shape: 'diamond' },
   splitter: { name: 'Splitter', hp: 60,   speed: 75,  radius: 18, color: '#e67e22', damage: 12, coin: 4,  unlock: 7, cost: 3, shape: 'splitter' },
