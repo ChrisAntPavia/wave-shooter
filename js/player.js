@@ -87,7 +87,8 @@ class Player {
   shoot() {
     const n = this.stats.bulletCount;
     const spread = 0.13;
-    const muzzle = this.radius + 8;
+    // Spawn close to the centre (body is drawn on top) so enemies hugging the player still get hit.
+    const muzzle = 6;
     for (let i = 0; i < n; i++) {
       const a = this.angle + (i - (n - 1) / 2) * spread;
       const crit = Math.random() < this.stats.critChance;
@@ -98,7 +99,7 @@ class Player {
         this.stats.bulletSpeed,
         this.stats.damage * (crit ? 2 : 1),
         'player',
-        { pierce: this.stats.pierce, crit },
+        { pierce: this.stats.pierce, crit, originX: this.x, originY: this.y },
       ));
     }
   }
