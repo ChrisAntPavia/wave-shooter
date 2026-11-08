@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Shooter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Main menu -->
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <h1>WAVE SHOOTER</h1>
+      <p class="sub">Survive the waves. Grab the coins. Upgrade between rounds.</p>
+      <ul class="controls">
+        <li><b>WASD</b> move</li>
+        <li><b>Mouse</b> aim &middot; <b>Left click</b> shoot</li>
+        <li><b>Space</b> dash (once unlocked)</li>
+        <li><b>Esc</b> pause</li>
+      </ul>
+      <p class="best">Best wave: <span id="menu-best">0</span></p>
+      <button id="btn-play" class="btn">Play</button>
+    </div>
+  </div>
+
+  <!-- Shop between waves -->
+  <div id="shop" class="overlay hidden">
+    <div class="panel wide">
+      <h2>Wave <span id="shop-wave">1</span> cleared!</h2>
+      <p class="coins-line">Coins: <span id="shop-coins" class="coin-text">0</span>
+        &nbsp;&middot;&nbsp; HP: <span id="shop-hp">100/100</span></p>
+      <div id="shop-grid"></div>
+      <button id="btn-next" class="btn">Next Wave &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Pause -->
+  <div id="pause" class="overlay hidden">
+    <div class="panel">
+      <h2>Paused</h2>
+      <button id="btn-resume" class="btn">Resume</button>
+    </div>
+  </div>
+
+  <!-- Game over -->
+  <div id="gameover" class="overlay hidden">
+    <div class="panel">
+      <h2 class="danger">Game Over</h2>
+      <p>You reached wave <b id="go-wave">1</b></p>
+      <p>Enemies defeated: <b id="go-kills">0</b> &middot; Coins earned: <b id="go-coins" class="coin-text">0</b></p>
+      <p class="best">Best wave: <span id="go-best">0</span><span id="go-newbest" class="newbest hidden"> &mdash; NEW BEST!</span></p>
+      <button id="btn-again" class="btn">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Classic scripts (not modules) so the game works when opened straight from file:// -->
+  <script src="js/utils.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/bullets.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/enemies.js"></script>
+  <script src="js/pickups.js"></script>
+  <script src="js/waves.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
